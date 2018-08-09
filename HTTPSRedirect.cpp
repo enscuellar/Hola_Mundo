@@ -143,7 +143,7 @@ String HTTPSRedirect::createRequest(const char* url, const char* host){
 
 void HTTPSRedirect::fetchData(bool disp, bool header){
   String line;
-  pinMode(5, OUTPUT);
+  pinMode(14, OUTPUT);
   
   while (connected()) {
     line = readStringUntil('\n');
@@ -152,11 +152,11 @@ void HTTPSRedirect::fetchData(bool disp, bool header){
       Serial.println(line);
         if(line == "On\r"){
 	        //  Serial.println("Led On");
-	        digitalWrite(5, HIGH);
+	        digitalWrite(14, HIGH);
 	      }
 	        if(line == "Off\r"){
 	        //  Serial.println("Led Off");	  
-	        digitalWrite(2, LOW);
+	        digitalWrite(14, LOW);
           }
         
     if (line == "\r") {
